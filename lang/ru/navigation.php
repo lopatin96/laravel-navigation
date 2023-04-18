@@ -13,4 +13,12 @@ return [
 
     'Go dashboard' => 'Перейти в панель',
 
+    // Footer
+    'Blog' => 'Блог',
+    'Terms' => 'Правила',
+    'Privacy' => 'Конфиденциальность',
+    'Contact Us' => 'Свяжитесь с нами',
+
+    'All rights reserved...' => '© 2023 Planning Poker. Все права защищены.',
+
 ];

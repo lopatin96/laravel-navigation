@@ -19,4 +19,6 @@ return [
     'Privacy' => 'Privacy',
     'Contact Us' => 'Contact Us',
 
+    'All rights reserved...' => '© 2023 Planning Poker. All rights reserved.',
+
 ];

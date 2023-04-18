@@ -8,7 +8,7 @@
                     </a>
                 </p>
                 <p class="text-xs text-gray-500">
-                    {{ __('All rights reserved...') }}
+                    {{ __('laravel-navigation::navigation.All rights reserved...') }}
                 </p>
             </div>
             <div class="w-auto p-8">
