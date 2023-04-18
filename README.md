@@ -1,29 +1,23 @@
 # Install
-### Publish config
+### View
+#### Header
+Replace content of *resource/views/layouts/header.blade.php* with:
 ```php
-php artisan vendor:publish --tag="laravel-navigation-config"
+@include('laravel-navigation::navigation.header')
 ```
-Select which variants of sections in you want. You can do it in *config/welcome-page.php*:
-```json
-'sections' => [
-    'main' => 'v1',
-    'others' => [
-        [
-            'name' => 'how-it-works',
-            'variant' => 'v1',
-        ],
-        [
-          'name' => 'call-to-action',
-          'variant' => 'v2',
-        ],
-```
-by specifying order of sections and their variants.
 
-### Publish localization
+#### Footer
+Replace content of *resource/views/layouts/footer.blade.php* with:
 ```php
-php artisan vendor:publish --tag="laravel-navigation-lang"
+@include('laravel-navigation::navigation.footer')
 ```
-Add local strings in *lang/vendor/welcome-page/en/<section-name-variant>.php* for selected sections.
+
+#### Navigation-menu
+
+#### Policy
+
+#### Terms
+
 
 # Publishing
 ### Localization
