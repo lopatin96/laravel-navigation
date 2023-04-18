@@ -13,10 +13,34 @@ Replace content of *resource/views/layouts/footer.blade.php* with:
 ```
 
 #### Navigation-menu
+Replace content of *resource/views/navigation-menu.blade.php* with:
+```php
+@include('laravel-navigation::navigation.navigation-menu')
+```
 
-#### Policy
+and add gates to *app/Providers/AppServiceProvider.php*:
+```php
+public function boot(): void
+{
+    …
 
-#### Terms
+    Gate::define('admin_area', static function (User $user) {
+        return $user->isAdmin();
+    });
+
+    Gate::define('pro_area', static function (User $user) {
+        return $user->subscribed();
+    });
+
+    Gate::define('true_area', static function (User $user) {
+        return true;
+    });
+
+    Gate::define('false_area', static function (User $user) {
+        return false;
+    });
+}
+```
 
 
 # Publishing
