@@ -13,4 +13,10 @@ return [
 
     'Go dashboard' => 'Go dashboard',
 
+    // Footer
+    'Blog' => 'Blog',
+    'Terms' => 'Terms',
+    'Privacy' => 'Privacy',
+    'Contact Us' => 'Contact Us',
+
 ];

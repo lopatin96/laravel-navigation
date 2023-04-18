@@ -20,7 +20,22 @@ return [
                 'title' => 'FAQ',
                 'href' => '#faq'
             ],
-        ]
-
+        ],
+    ],
+    'footer' => [
+        'links' => [
+            [
+                'title' => 'Blog',
+                'href' => '/blog'
+            ],
+            [
+                'title' => 'Terms',
+                'href' => '/terms-of-service'
+            ],
+            [
+                'title' => 'Privacy',
+                'href' => '/privacy-policy'
+            ],
+        ],
     ]
 ];

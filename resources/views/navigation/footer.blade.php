@@ -12,12 +12,12 @@
                 </p>
             </div>
             <div class="w-auto p-8">
-                <ul class="flex flex-wrap items-center -m-5">
-                    <li class="p-3"><a class="text-gray-600 hover:text-gray-700 font-medium" href="/blog">{{ __('Blog') }}</a></li>
-                    <li class="p-3"><a class="text-gray-600 hover:text-gray-700 font-medium" href="/terms-of-service">{{ __('Terms') }}</a></li>
-                    <li class="p-3"><a class="text-gray-600 hover:text-gray-700 font-medium" href="/privacy-policy">{{ __('Privacy') }}</a></li>
-                    <li class="p-3"><a class="text-gray-600 hover:text-gray-700 font-medium" href="mailto:{{ config('mail.support') }}">{{ __('Contact Us') }}</a></li>
-                    <li class="p-3">
+                <ul class="flex flex-wrap items-center space-x-5 -m-5">
+                    @foreach(config('laravel-navigation.footer.links') as $link)
+                        <li><a class="text-gray-500 hover:text-gray-700 font-medium" href="{{ $link['href'] }}">{{ __('laravel-navigation::navigation.' . $link['title']) }}</a></li>
+                    @endforeach
+                    <li><a class="text-gray-500 hover:text-gray-700 font-medium" href="mailto:{{ config('mail.support') }}">{{ __('Contact Us') }}</a></li>
+                    <li>
                         @include('laravel-lang-switcher::lang-switcher.index')
                     </li>
                 </ul>
