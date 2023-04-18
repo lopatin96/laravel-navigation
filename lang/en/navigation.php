@@ -21,4 +21,18 @@ return [
 
     'All rights reserved...' => '© 2023 Planning Poker. All rights reserved.',
 
+    // Navigation menu
+        // Navigation links
+        'Dashboard' => 'Dashboard',
+
+        // Dropdown
+        'Admin Panel' => 'Admin Panel',
+        'Manage Account' => 'Manage Account',
+
+        'Nova' => 'Nova',
+        'Vapor UI' => 'Vapor UI',
+        'Profile' => 'Profile',
+        'Buy Premium' => 'Buy Premium',
+
+        'Log Out' => 'Log Out',
 ];

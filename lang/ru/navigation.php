@@ -21,4 +21,16 @@ return [
 
     'All rights reserved...' => '© 2023 Planning Poker. Все права защищены.',
 
+    // Navigation menu
+        // Navigation links
+        'Dashboard' => 'Панель',
+
+        // Dropdown
+        'Admin Panel' => 'Панель администратора',
+        'Manage Account' => 'Управление аккаунтом',
+
+        'Profile' => 'Профиль',
+        'Buy Premium' => 'Купить премиум',
+
+        'Log Out' => 'Выйти',
 ];
