@@ -8,4 +8,9 @@ return [
     'Pricing' => 'Pricing',
     'FAQ' => 'FAQ',
 
+    'Sign in' => 'Sign in',
+    'Sign up' => 'Sign up',
+
+    'Go dashboard' => 'Go dashboard',
+
 ];

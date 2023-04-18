@@ -1,15 +1,15 @@
 {
-  "name": "lopatin96/laravel-welcome-page",
-  "description": "Laravel welcome page",
+  "name": "lopatin96/laravel-navigation",
+  "description": "Laravel navigation",
   "autoload": {
     "psr-4": {
-      "Atin\\LaravelWelcomePage\\": "src"
+      "Atin\\LaravelNavigation\\": "src"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Atin\\LaravelWelcomePage\\WelcomePageProvider"
+        "Atin\\LaravelNavigation\\NavigationProvider"
       ]
     }
   },
