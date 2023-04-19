@@ -6,6 +6,12 @@ Replace content of *resource/views/layouts/header.blade.php* with:
 @include('laravel-navigation::navigation.header')
 ```
 
+and add import to *resources/js/app.js*:
+
+```js
+import '../../vendor/lopatin96/laravel-navigation/resources/js/anchor-scroller';
+```
+
 #### Footer
 Replace content of *resource/views/layouts/footer.blade.php* with:
 ```php
