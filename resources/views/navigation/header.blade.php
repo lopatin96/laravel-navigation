@@ -4,7 +4,7 @@
             <div class="flex flex-wrap items-center">
                 <div class="w-auto mr-6">
                     <a href="{{ route('home') }}" >
-                        <x-application-logo />
+                        <x-application-logo class="h-11 w-auto" />
                     </a>
                 </div>
             </div>
