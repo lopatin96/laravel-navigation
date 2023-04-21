@@ -214,6 +214,7 @@
                     <x-responsive-nav-link
                         href="{{ route('logout') }}"
                         @click.prevent="$root.submit();"
+                        class="text-red-500 hover:text-red-500"
                     >
                         {{ __('laravel-navigation::navigation.Log Out') }}
                     </x-responsive-nav-link>
