@@ -9,10 +9,10 @@
                 </div>
             </div>
             <div class="w-auto">
-                <div class="flex flex-wrap items-center">
+                <div class="flex flex-wrap items-center space-x-10">
                     @if (isset($showLinks) && $showLinks)
                         <div class="w-auto hidden lg:block">
-                            <ul class="flex items-center space-x-6 mr-10">
+                            <ul class="flex items-center space-x-6">
                                 @foreach(config('laravel-navigation.header.links') as $link)
                                     <li class="font-medium link-underline link-underline-black"><a href="{{ $link['href'] }}">{{ __('laravel-navigation::navigation.' . $link['title']) }}</a></li>
                                 @endforeach
@@ -23,7 +23,7 @@
                         @if (Auth::check())
                             <div class="inline-block">
                                 <a
-                                    class=" flex items-center space-x-2 py-3 px-5 w-full text-white font-semibold rounded-xl focus:ring focus:outline-none focus:ring-gray-500 bg-black hover:bg-gray-900 transition ease-in-out duration-200 select-none"
+                                    class="flex items-center space-x-2 py-3 px-5 w-full text-white font-semibold rounded-xl focus:ring focus:outline-none focus:ring-gray-500 bg-black hover:bg-gray-900 transition ease-in-out duration-200 select-none"
                                     href="{{ route('dashboard') }}"
                                 >
                                     <span>{{ __('laravel-navigation::navigation.Go dashboard') }}</span>
