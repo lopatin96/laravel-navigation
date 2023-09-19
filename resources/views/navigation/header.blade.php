@@ -1,5 +1,5 @@
 <section>
-    <div class="overflow-hidden max-w-6xl mx-auto">
+    <div class="max-w-6xl mx-auto">
         <div class="flex items-center justify-between px-4 py-10">
             <div class="flex flex-wrap items-center">
                 <div class="w-auto mr-6">
@@ -11,14 +11,18 @@
             <div class="w-auto">
                 <div class="flex flex-wrap items-center space-x-10">
                     @if (isset($showLinks) && $showLinks)
-                        <div class="w-auto hidden lg:block">
+                        <div class="w-auto">
                             <ul class="flex items-center space-x-6">
                                 @foreach(config('laravel-navigation.header.links') as $link)
-                                    <li class="font-medium link-underline link-underline-black"><a href="{{ $link['href'] }}">{{ __('laravel-navigation::navigation.' . $link['title']) }}</a></li>
+                                    <li class="font-medium link-underline link-underline-black hidden lg:block"><a href="{{ $link['href'] }}">{{ __('laravel-navigation::navigation.' . $link['title']) }}</a></li>
                                 @endforeach
+                                <li>
+                                    <x-laravel-lang-switcher::lang-switcher align="top" class="font-medium link-underline link-underline-black cursor-pointer pb-0.5" />
+                                </li>
                             </ul>
                         </div>
                     @endif
+
                     <div class="w-auto">
                         @if (Auth::check())
                             <div class="inline-block">
