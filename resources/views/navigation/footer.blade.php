@@ -1,6 +1,6 @@
 <section class="relative py-8 bg-white">
     <div class="relative container px-4 max-w-5xl mx-auto">
-        <div class="flex flex-wrap justify-between items-center">
+        <div class="flex justify-between items-center">
             <div class="space-y-2 w-auto p-8">
                 <p>
                     <a href="{{ route('home') }}">
@@ -10,6 +10,9 @@
                 <p class="text-xs text-gray-500">
                     {{ __('laravel-navigation::navigation.All rights reserved...') }}
                 </p>
+            </div>
+            <div class="space-y-2 w-auto p-8">
+                <x-laravel-navigation::social-media />
             </div>
             <div class="w-auto p-8">
                 <ul class="flex flex-wrap items-center space-x-5 -m-5">

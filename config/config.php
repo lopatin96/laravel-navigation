@@ -79,5 +79,10 @@ return [
                 ],
             ],
         ],
+    ],
+    'social-media' => [
+        'fb' => '',
+        'instagram' => '',
+        'youtube' => '',
     ]
 ];
