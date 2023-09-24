@@ -16,7 +16,7 @@
                                 @foreach(config('laravel-navigation.header.links') as $link)
                                     <li class="font-medium link-underline link-underline-black hidden lg:block"><a href="{{ $link['href'] }}">{{ __('laravel-navigation::navigation.' . $link['title']) }}</a></li>
                                 @endforeach
-                                <li>
+                                <li class="hidden sm:block">
                                     <x-laravel-lang-switcher::lang-switcher align="top" class="font-medium link-underline link-underline-black cursor-pointer pb-0.5" />
                                 </li>
                             </ul>
