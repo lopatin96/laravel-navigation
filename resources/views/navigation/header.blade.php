@@ -2,7 +2,7 @@
     <div class="max-w-6xl mx-auto">
         <div class="flex items-center justify-between px-4 py-10">
             <div class="flex flex-wrap items-center">
-                <div class="w-auto mr-6">
+                <div class="w-auto mr-6 ml-5">
                     <a href="{{ route('home') }}" >
                         <x-application-logo class="h-11 w-auto" />
                     </a>
