@@ -83,9 +83,9 @@
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button class="group flex items-center space-x-3 hover:bg-gray-50 p-2 rounded-lg">
                                     <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                                    <div class="text-right">
-                                        <div class="font-semibold text-sm text-gray-700">{{ Auth::user()->name }}</div>
-                                        <div class="text-xs text-gray-400">{{ Auth::user()->email }}</div>
+                                    <div class="text-right max-w-[150px]">
+                                        <div class="font-semibold text-sm text-gray-700 truncate">{{ Auth::user()->name }}</div>
+                                        <div class="text-xs text-gray-400 truncate">{{ Auth::user()->email }}</div>
                                     </div>
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-400 group-hover:text-gray-500 w-4 h-4">
