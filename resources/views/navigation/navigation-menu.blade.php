@@ -13,7 +13,13 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     @foreach(config('laravel-navigation.navigation-menu.navigation-links') as $link)
-                        <x-nav-link href="{{ route($link['route']) }}" :active="request()->routeIs($link['route'])">
+                        <x-nav-link
+                            href="{{ route($link['route']) }}"
+                            :active="request()->routeIs($link['route'])"
+                            @if (isset($link['target']) && $link['route'])))
+                                target="{{ $link['target'] }}"
+                            @endif
+                        >
                             <div class="flex items-center space-x-2">
                                 {!! $link['icon'] !!}
                                 <span>
@@ -167,7 +173,13 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             @foreach(config('laravel-navigation.navigation-menu.navigation-links') as $link)
-                <x-responsive-nav-link href="{{ route($link['route']) }}" :active="request()->routeIs($link['route'])">
+                <x-responsive-nav-link
+                    href="{{ route($link['route']) }}"
+                    :active="request()->routeIs($link['route'])"
+                    @if (isset($link['target']) && $link['route'])))
+                        target="{{ $link['target'] }}"
+                    @endif
+                >
                     {{ __('laravel-navigation::navigation.' . $link['title']) }}
                 </x-responsive-nav-link>
             @endforeach
