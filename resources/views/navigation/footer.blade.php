@@ -15,13 +15,13 @@
                 <x-laravel-navigation::social-media />
             </div>
             <div class="w-auto p-8">
-                <ul class="flex flex-wrap items-center -m-5">
+                <ul class="flex flex-wrap items-center">
                     @foreach(config('laravel-navigation.footer.links') as $link)
-                        <li class="mx-2.5"><a class="text-gray-500 hover:text-gray-700 font-medium" href="{{ $link['href'] }}">{{ __('laravel-navigation::navigation.' . $link['title']) }}</a></li>
+                        <li class="mx-2"><a class="text-gray-500 hover:text-gray-700 text-sm" href="{{ $link['href'] }}">{{ __('laravel-navigation::navigation.' . $link['title']) }}</a></li>
                     @endforeach
-                    <li class="mx-2.5"><a class="text-gray-500 hover:text-gray-700 font-medium" href="mailto:{{ config('mail.support') }}">{{ __('laravel-navigation::navigation.Contact Us') }}</a></li>
-                    <li class="mx-2.5">
-                        <x-laravel-lang-switcher::lang-switcher class="text-gray-500 hover:text-gray-700 font-medium cursor-pointer" />
+                    <li class="mx-2"><a class="text-gray-500 hover:text-gray-700 text-sm" href="mailto:{{ config('mail.support') }}">{{ __('laravel-navigation::navigation.Contact Us') }}</a></li>
+                    <li class="mx-2">
+                        <x-laravel-lang-switcher::lang-switcher class="text-gray-500 hover:text-gray-700 text-sm cursor-pointer" />
                     </li>
                 </ul>
             </div>
