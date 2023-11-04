@@ -38,7 +38,7 @@
 
             <div class="mb-6">
                 <div
-                    class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+                    class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
                     id="tabs-subscription"
                     role="tabpanel"
                     aria-labelledby="tabs-subscription-tab"
