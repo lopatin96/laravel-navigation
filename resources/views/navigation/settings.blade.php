@@ -12,6 +12,7 @@
                         class="rounded-2xl transition block px-3.5 py-2.5 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-200 focus:isolate focus:border-transparent data-[te-nav-active]:bg-neutral-200 data-[te-nav-active]:text-gray-700 dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400"
                         data-te-toggle="pill"
                         data-te-target="#tabs-subscription"
+                        data-te-nav-active
                         role="tab"
                         aria-controls="tabs-subscription"
                         aria-selected="false"
