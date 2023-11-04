@@ -53,6 +53,12 @@
                     role="tabpanel"
                     aria-labelledby="tabs-account-tab"
                 >
+                    @if (Laravel\Fortify\Features::canUpdateProfileInformation())
+                        @livewire('profile.update-profile-information-form')
+
+                        <x-section-border />
+                    @endif
+
                     @if (! Auth::user()->socialAccount && Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
                         <div class="mt-10 sm:mt-0">
                             @livewire('profile.update-password-form')
