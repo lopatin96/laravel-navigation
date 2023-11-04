@@ -29,8 +29,13 @@ return [
         'Admin Panel' => 'Панель администратора',
         'Manage Account' => 'Управление аккаунтом',
 
-        'Profile' => 'Профиль',
+        'Settings' => 'Настройки',
         'Buy Premium' => 'Купить премиум',
 
         'Log Out' => 'Выйти',
+
+    // Settings
+    'Subscription' => 'Настройки',
+    'Account' => 'Аккаунт',
+
 ];

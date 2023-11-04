@@ -24,6 +24,12 @@ Replace content of *resource/views/navigation-menu.blade.php* with:
 @include('laravel-navigation::navigation.navigation-menu')
 ```
 
+#### Profile
+Replace content of *resource/views/profile/show.blade.php* with:
+```php
+@include('laravel-navigation::navigation.settings')
+```
+
 and add gates to *app/Providers/AppServiceProvider.php*:
 ```php
 public function boot(): void

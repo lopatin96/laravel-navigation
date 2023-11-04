@@ -31,8 +31,13 @@ return [
 
         'Nova' => 'Nova',
         'Vapor UI' => 'Vapor UI',
-        'Profile' => 'Profile',
+        'Settings' => 'Settings',
         'Buy Premium' => 'Buy Premium',
 
         'Log Out' => 'Log Out',
+
+    // Settings
+        'Subscription' => 'Subscription',
+        'Account' => 'Account',
+
 ];

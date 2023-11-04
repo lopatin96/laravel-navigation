@@ -69,7 +69,7 @@ return [
                     'title' => 'Manage Account',
                     'links' => [
                         [
-                            'title' => 'Profile',
+                            'title' => 'Settings',
                             'cannot' => 'pro_area',
                             'route' => 'profile.show'
                         ],
