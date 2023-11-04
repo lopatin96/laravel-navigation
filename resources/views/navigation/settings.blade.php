@@ -15,7 +15,7 @@
                         data-te-nav-active
                         role="tab"
                         aria-controls="tabs-subscription"
-                        aria-selected="false"
+                        aria-selected="true"
                     >
                         {{ __('laravel-navigation::navigation.Subscription') }}
                     </a>
@@ -42,6 +42,7 @@
                     id="tabs-subscription"
                     role="tabpanel"
                     aria-labelledby="tabs-subscription-tab"
+                    data-te-tab-active
                 >
                     @include('laravel-subscription::subscription.card')
                 </div>
