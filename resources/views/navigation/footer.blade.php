@@ -1,29 +1,55 @@
-<section class="relative py-8 bg-white">
-    <div class="relative container px-4 max-w-5xl mx-auto">
-        <div class="flex justify-between items-center">
-            <div class="space-y-2 w-auto p-8">
+<section class="relative p-8 bg-white">
+    <div class="px-4 max-w-5xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="space-y-2 w-auto">
                 <p>
                     <a href="{{ route('home') }}">
                         <x-application-logo class="h-7 w-auto" />
                     </a>
                 </p>
+
                 <p class="text-xs text-gray-500">
                     {{ __('laravel-navigation::navigation.All rights reserved...') }}
                 </p>
+
+                <x-laravel-lang-switcher::lang-switcher class="text-gray-500 hover:text-gray-700 text-sm cursor-pointer" />
             </div>
-            <div class="space-y-2 w-auto p-8">
-                <x-laravel-navigation::social-media />
-            </div>
-            <div class="w-auto p-8">
-                <ul class="flex flex-wrap items-center">
-                    @foreach(config('laravel-navigation.footer.links') as $link)
-                        <li class="mx-2"><a class="text-gray-500 hover:text-gray-700 text-sm" href="{{ $link['href'] }}">{{ __('laravel-navigation::navigation.' . $link['title']) }}</a></li>
-                    @endforeach
-                    <li class="mx-2"><a class="text-gray-500 hover:text-gray-700 text-sm" href="mailto:{{ config('mail.support') }}">{{ __('laravel-navigation::navigation.Contact Us') }}</a></li>
-                    <li class="mx-2">
-                        <x-laravel-lang-switcher::lang-switcher class="text-gray-500 hover:text-gray-700 text-sm cursor-pointer" />
-                    </li>
-                </ul>
+
+            @foreach(config('laravel-navigation.footer') as $footerSection)
+                <div class="text-right">
+                    <h4 class="text-gray-600 uppercase font-semibold text-sm">
+                        {{ __('laravel-navigation::navigation.' . $footerSection['title']) }}
+                    </h4>
+
+                    <ul>
+                        @foreach($footerSection['links'] as $link)
+                            @if ($link['href'])
+                                <li>
+                                    <a
+                                        class="text-gray-500 hover:text-gray-700 text-sm @if($link['target'] ?? '_self' === '_blank') after:content-['_↗'] @endif"
+                                        href="{{ $link['href'] }}"
+                                        target="{{ $link['target'] ?? '_self' }}"
+                                    >
+                                        {{ __('laravel-navigation::navigation.' . $link['title']) }}
+                                    </a>
+                                </li>
+                            @endif
+                        @endforeach
+                    </ul>
+                </div>
+            @endforeach
+
+
+
+{{--                <ul class="flex flex-wrap items-center">--}}
+{{--                    @foreach(config('laravel-navigation.footer.links') as $link)--}}
+{{--                        <li class="mx-2"><a class="text-gray-500 hover:text-gray-700 text-sm" href="{{ $link['href'] }}">{{ __('laravel-navigation::navigation.' . $link['title']) }}</a></li>--}}
+{{--                    @endforeach--}}
+{{--                    <li class="mx-2"><a class="text-gray-500 hover:text-gray-700 text-sm" href="mailto:{{ config('mail.support') }}">{{ __('laravel-navigation::navigation.Contact Us') }}</a></li>--}}
+{{--                    <li class="mx-2">--}}
+{{--                        <x-laravel-lang-switcher::lang-switcher class="text-gray-500 hover:text-gray-700 text-sm cursor-pointer" />--}}
+{{--                    </li>--}}
+{{--                </ul>--}}
             </div>
         </div>
     </div>

@@ -14,10 +14,18 @@ return [
     'Go dashboard' => 'Перейти в панель',
 
     // Footer
-    'Blog' => 'Блог',
+    'Product' => 'Продукт',
+    'Support' => 'Поддержка',
+    'Affiliate program' => 'Партнерская программа',
+
+    'Resources' => 'Ресурсы',
     'Terms' => 'Правила',
     'Privacy' => 'Конфиденциальность',
-    'Contact Us' => 'Свяжитесь с нами',
+
+    'Social' => 'Соцсети',
+    'Facebook' => 'Facebook',
+    'Instagram' => 'Instagram',
+    'Youtube' => 'Youtube',
 
     'All rights reserved...' => '© 2023 Planning Poker. Все права защищены.',
 

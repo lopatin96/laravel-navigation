@@ -14,10 +14,18 @@ return [
     'Go dashboard' => 'Go dashboard',
 
     // Footer
-    'Blog' => 'Blog',
+    'Product' => 'Product',
+    'Support' => 'Support',
+    'Affiliate program' => 'Affiliate program',
+
+    'Resources' => 'Resources',
     'Terms' => 'Terms',
     'Privacy' => 'Privacy',
-    'Contact Us' => 'Contact Us',
+
+    'Social' => 'Social',
+    'Facebook' => 'Facebook',
+    'Instagram' => 'Instagram',
+    'Youtube' => 'Youtube',
 
     'All rights reserved...' => '© 2023 Planning Poker. All rights reserved.',
 
@@ -37,7 +45,7 @@ return [
         'Log Out' => 'Log Out',
 
     // Settings
-        'Subscription' => 'Subscription',
-        'Account' => 'Account',
+    'Subscription' => 'Subscription',
+    'Account' => 'Account',
 
 ];

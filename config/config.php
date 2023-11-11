@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     'header' => [
         'links' => [
             [
@@ -10,31 +9,66 @@ return [
             ],
             [
                 'title' => 'Testimonials',
-                'href' => '#testimonials'
+                'href' => '#testimonials',
             ],
             [
                 'title' => 'Pricing',
-                'href' => '#pricing'
+                'href' => '#pricing',
             ],
             [
                 'title' => 'FAQ',
-                'href' => '#faq'
+                'href' => '#faq',
             ],
         ],
     ],
     'footer' => [
-        'links' => [
-            [
-                'title' => 'Blog',
-                'href' => '/blog'
+        [
+            'title' => 'Product',
+            'links' => [
+                [
+                    'title' => 'Support',
+                    'href' => 'mailto:support@flexl.ink',
+                ],
+                [
+                    'title' => 'Affiliate program',
+                    'href' => '/affiliate-program',
+                ],
             ],
-            [
-                'title' => 'Terms',
-                'href' => '/terms-of-service'
+        ],
+        [
+            'title' => 'Resources',
+            'links' => [
+                [
+                    'title' => 'Blog',
+                    'href' => '/blog',
+                ],
+                [
+                    'title' => 'Terms',
+                    'href' => '/terms-of-service',
+                ],
+                [
+                    'title' => 'Privacy',
+                    'href' => '/privacy-policy',
+                ],
             ],
-            [
-                'title' => 'Privacy',
-                'href' => '/privacy-policy'
+        ],
+        [
+            'title' => 'Social',
+            'links' => [
+                [
+                    'title' => 'Facebook',
+                    'href' => null,
+                    'target' => '_blank',
+                ],
+                [
+                    'title' => 'Instagram',
+                    'href' => null,
+                ],
+                [
+                    'title' => 'Youtube',
+                    'href' => null,
+                ],
+
             ],
         ],
     ],
@@ -71,21 +105,16 @@ return [
                         [
                             'title' => 'Settings',
                             'cannot' => 'pro_area',
-                            'route' => 'profile.show'
+                            'route' => 'profile.show',
                         ],
                         [
                             'title' => 'Buy Premium',
                             'cannot' => 'pro_area',
-                            'href' => '/billing'
+                            'href' => '/billing',
                         ],
                     ],
                 ],
             ],
         ],
     ],
-    'social-media' => [
-        'fb' => '',
-        'instagram' => '',
-        'youtube' => '',
-    ]
 ];
