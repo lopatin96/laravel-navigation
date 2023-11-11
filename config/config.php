@@ -64,6 +64,26 @@ return [
             ],
         ],
         [
+            'title' => 'Platform',
+            'links' => [
+                [
+                    'title' => 'Log in',
+                    'href' => '/login',
+                    'gate' => 'logged_out',
+                ],
+                [
+                    'title' => 'Start a free trial',
+                    'href' => '/register',
+                    'gate' => 'logged_out',
+                ],
+                [
+                    'title' => 'My account',
+                    'href' => '/user/profile',
+                    'gate' => 'logged_in',
+                ],
+            ],
+        ],
+        [
             'title' => 'Social',
             'links' => [
                 [
