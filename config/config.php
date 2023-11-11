@@ -94,10 +94,12 @@ return [
                 [
                     'title' => 'Instagram',
                     'href' => null,
+                    'target' => '_blank',
                 ],
                 [
                     'title' => 'Youtube',
                     'href' => null,
+                    'target' => '_blank',
                 ],
 
             ],
