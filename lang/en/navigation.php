@@ -19,8 +19,14 @@ return [
     'Affiliate program' => 'Affiliate program',
 
     'Resources' => 'Resources',
+    'Blog' => 'Blog',
     'Terms' => 'Terms',
     'Privacy' => 'Privacy',
+
+    'Platform' => 'Platform',
+    'Log in' => 'Log in',
+    'Start a free trial' => 'Start a free trial',
+    'My account' => 'My account',
 
     'Social' => 'Social',
     'Facebook' => 'Facebook',

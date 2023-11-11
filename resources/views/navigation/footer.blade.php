@@ -1,6 +1,6 @@
 <section class="relative p-8 bg-white">
     <div class="px-4 max-w-5xl mx-auto">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="grid grid-cols-3 md:grid-cols-5 gap-4">
             <div class="space-y-2 w-auto">
                 <p>
                     <a href="{{ route('home') }}">
@@ -21,9 +21,16 @@
                         {{ __('laravel-navigation::navigation.' . $footerSection['title']) }}
                     </h4>
 
-                    <ul>
+                    <ul class="mt-2">
                         @foreach($footerSection['links'] as $link)
-                            @if ($link['href'])
+                            @if (
+                                $link['href']
+                                && (
+                                    ! array_key_exists('gate', $link)
+                                    || $link['gate'] === 'logged_in' && auth()->check()
+                                    || $link['gate'] === 'logged_out' && ! auth()->check()
+                                )
+                            )
                                 <li>
                                     <a
                                         class="text-gray-500 hover:text-gray-700 text-sm @if($link['target'] ?? '_self' === '_blank') after:content-['_↗'] @endif"

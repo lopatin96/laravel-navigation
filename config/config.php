@@ -26,12 +26,18 @@ return [
             'title' => 'Product',
             'links' => [
                 [
-                    'title' => 'Support',
-                    'href' => 'mailto:support@flexl.ink',
+                    'title' => 'Pricing',
+                    'href' => '#pricing',
+                    'gate' => 'logged_out',
                 ],
                 [
-                    'title' => 'Affiliate program',
-                    'href' => '/affiliate-program',
+                    'title' => 'Pricing',
+                    'href' => '/billing',
+                    'gate' => 'logged_in',
+                ],
+                [
+                    'title' => 'Support',
+                    'href' => null, // 'mailto:support@domain.com'
                 ],
             ],
         ],
@@ -49,6 +55,11 @@ return [
                 [
                     'title' => 'Privacy',
                     'href' => '/privacy-policy',
+                ],
+                [
+                    'title' => 'Affiliate program',
+                    'href' => '/affiliate-program',
+                    'gate' => 'logged_in',
                 ],
             ],
         ],

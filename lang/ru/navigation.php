@@ -19,8 +19,14 @@ return [
     'Affiliate program' => 'Партнерская программа',
 
     'Resources' => 'Ресурсы',
+    'Blog' => 'Блог',
     'Terms' => 'Правила',
     'Privacy' => 'Конфиденциальность',
+
+    'Platform' => 'Платформа',
+    'Log in' => 'Войти',
+    'Start a free trial' => 'Начать бесплатную пробную версию',
+    'My account' => 'Мой аккаунт',
 
     'Social' => 'Соцсети',
     'Facebook' => 'Facebook',
