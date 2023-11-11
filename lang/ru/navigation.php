@@ -33,7 +33,7 @@ return [
     'Instagram' => 'Instagram',
     'Youtube' => 'Youtube',
 
-    'All rights reserved...' => '© 2023 Planning Poker. Все права защищены.',
+    'All rights reserved...' => '© 2023 [Site Name]. Все права защищены.',
 
     // Navigation menu
         // Navigation links
