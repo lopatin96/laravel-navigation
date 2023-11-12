@@ -58,7 +58,7 @@ return [
                 ],
                 [
                     'title' => 'Affiliate program',
-                    'href' => '/affiliate-program',
+                    'href' => '/affiliate',
                     'gate' => 'logged_in',
                 ],
             ],
