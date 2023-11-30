@@ -2,7 +2,7 @@
 
 return [
     'header' => [
-        'links' => [
+        '/' => [
             [
                 'title' => 'How it works…',
                 'href' => '#how-it-works',
@@ -20,6 +20,9 @@ return [
                 'href' => '#faq',
             ],
         ],
+//        'affiliate-program' => [
+//            …
+//        ]
     ],
     'footer' => [
         [

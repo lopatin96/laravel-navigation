@@ -13,7 +13,7 @@
                     @if (isset($showLinks) && $showLinks)
                         <div class="w-auto">
                             <ul class="flex items-center space-x-6">
-                                @foreach(config('laravel-navigation.header.links') as $link)
+                                @foreach(config('laravel-navigation.header.' . \Illuminate\Support\Facades\Request::path()) as $link)
                                     <li class="font-medium link-underline link-underline-black hidden lg:block"><a href="{{ $link['href'] }}">{{ __('laravel-navigation::navigation.' . $link['title']) }}</a></li>
                                 @endforeach
                                 <li class="hidden sm:block">
