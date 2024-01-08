@@ -119,10 +119,7 @@
                                         </div>
 
                                         @foreach($section['links'] as $link)
-                                            <x-dropdown-link
-                                                target="_blank"
-                                                :href="array_key_exists('href', $link) ? $link['href'] : route($link['route'])"
-                                            >
+                                            <x-dropdown-link :href="array_key_exists('href', $link) ? $link['href'] : route($link['route'])">
                                                 {{ __('laravel-navigation::navigation.' . $link['title']) }}
                                             </x-dropdown-link>
                                         @endforeach
