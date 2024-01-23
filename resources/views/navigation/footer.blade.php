@@ -1,4 +1,4 @@
-<section class="relative p-8 bg-white">
+<footer class="relative p-8 bg-white">
     <div class="px-4 max-w-5xl mx-auto">
         <div class="grid grid-cols-3 md:grid-cols-5 gap-4">
             <div class="space-y-2 w-auto">
@@ -60,4 +60,4 @@
             </div>
         </div>
     </div>
-</section>
+</footer>

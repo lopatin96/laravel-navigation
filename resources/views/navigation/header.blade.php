@@ -1,4 +1,4 @@
-<section>
+<header>
     <div class="max-w-6xl mx-auto">
         <div class="flex items-center justify-between px-4 py-10">
             <div class="flex flex-wrap items-center">
@@ -14,7 +14,11 @@
                         <div class="w-auto">
                             <ul class="flex items-center space-x-6">
                                 @foreach(config('laravel-navigation.header.' . \Illuminate\Support\Facades\Request::path()) as $link)
-                                    <li class="font-medium link-underline link-underline-black hidden lg:block"><a href="{{ $link['href'] }}">{{ __('laravel-navigation::navigation.' . $link['title']) }}</a></li>
+                                    <li data-header-link-id="{{ str_replace('#', '', $link['href']) }}" class="font-medium link-underline link-underline-black hidden lg:block">
+                                        <a href="{{ $link['href'] }}">
+                                            {{ __('laravel-navigation::navigation.' . $link['title']) }}
+                                        </a>
+                                    </li>
                                 @endforeach
                                 <li class="hidden sm:block">
                                     <x-laravel-lang-switcher::lang-switcher align="top" class="font-medium link-underline link-underline-black cursor-pointer pb-0.5" />
@@ -60,4 +64,14 @@
             </div>
         </div>
     </div>
-</section>
+
+    <script>
+        $(document).ready(function() {
+            $('[data-header-link-id]').each(function (index, element) {
+                if(! $('#' + $(element).data('header-link-id')).length ) {
+                    $(element).css('display', 'none');
+                }
+            });
+        });
+    </script>
+</header>
