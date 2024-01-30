@@ -49,7 +49,7 @@ return [
         'Log Out' => 'Выйти',
 
     // Settings
-    'Subscription' => 'Настройки',
+    'Subscription' => 'Подписка',
     'Account' => 'Аккаунт',
 
 ];
