@@ -5,7 +5,7 @@ return [
     // Header
     'How it works…' => 'Как это работает…',
     'Testimonials' => 'Отзывы',
-    'Pricing' => 'Ценник',
+    'Pricing' => 'Тарифы',
     'FAQ' => 'FAQ',
 
     'Sign in' => 'Вход',
