@@ -1,16 +1,16 @@
 <footer class="relative p-8 bg-white">
     <div class="px-4 max-w-5xl mx-auto">
         <div class="grid grid-cols-3 md:grid-cols-5 gap-4">
-            <div class="space-y-2 w-auto">
-                <p>
+            <div class="space-y-3 w-auto">
+                <div class="flex items-center space-x-3">
                     <a href="{{ route('home') }}">
-                        <x-application-logo class="h-7 w-auto" />
+                        <x-application-logo class="h-5 w-auto" />
                     </a>
-                </p>
 
-                <p class="text-xs text-gray-500">
-                    {{ __('laravel-navigation::navigation.All rights reserved...') }}
-                </p>
+                    <span class="text-xs text-gray-500">
+                        {{ __('laravel-navigation::navigation.All rights reserved...') }}
+                    </span>
+                </div>
 
                 <x-laravel-lang-switcher::lang-switcher class="text-gray-500 hover:text-gray-700 text-sm cursor-pointer" />
             </div>
