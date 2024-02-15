@@ -8,7 +8,7 @@
                     </a>
 
                     <span class="text-xs text-gray-500">
-                        {{ __('laravel-navigation::navigation.All rights reserved...') }}
+                        © {{ config('app.name') }}, {{ date('Y') }}.
                     </span>
                 </div>
 
