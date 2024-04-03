@@ -3,7 +3,7 @@
         <div class="grid grid-cols-3 md:grid-cols-5 gap-4">
             <div class="space-y-3 w-auto">
                 <div class="flex items-center space-x-3">
-                    <a href="{{ route('home') }}">
+                    <a href="{{ route('home') }}" alt="Logo">
                         <x-application-logo class="h-5 w-auto" />
                     </a>
 
