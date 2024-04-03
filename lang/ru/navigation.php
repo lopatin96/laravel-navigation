@@ -33,8 +33,6 @@ return [
     'Instagram' => 'Instagram',
     'Youtube' => 'Youtube',
 
-    'All rights reserved...' => '© 2023 [Site Name]. Все права защищены.',
-
     // Navigation menu
         // Navigation links
         'Dashboard' => 'Панель',
