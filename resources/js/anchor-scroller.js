@@ -1,5 +1,5 @@
 document.addEventListener('click', function(event) {
-    if (event.target.tagName === 'A' && event.target.getAttribute('href').startsWith('#')) {
+    if (event.target.tagName === 'A' && event.target.getAttribute('href') && event.target.getAttribute('href').startsWith('#')) {
         event.preventDefault();
 
         let target = document.querySelector(event.target.getAttribute('href'));
