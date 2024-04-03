@@ -17,9 +17,9 @@
 
             @foreach(config('laravel-navigation.footer') as $footerSection)
                 <div class="text-right">
-                    <h4 class="text-gray-600 uppercase font-semibold text-sm">
+                    <span class="text-gray-600 uppercase font-semibold text-sm">
                         {{ __('laravel-navigation::navigation.' . $footerSection['title']) }}
-                    </h4>
+                    </span>
 
                     <ul class="mt-2">
                         @foreach($footerSection['links'] as $link)
