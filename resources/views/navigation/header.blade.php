@@ -1,20 +1,29 @@
 <header>
+    @if(\Illuminate\Support\Facades\Request::path() === '/')
+        <svg class="absolute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#fff" fill-opacity=".35" d="M0,192L80,170.7C160,149,320,107,480,96C640,85,800,107,960,117.3C1120,128,1280,128,1360,128L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+        </svg>
+    @endif
+
     <div class="max-w-6xl mx-auto">
         <div class="flex items-center justify-between px-4 py-10">
-            <div class="flex flex-wrap items-center">
+            <div class="z-10 flex flex-wrap items-center">
                 <div class="w-auto mr-6 ml-5">
                     <a href="{{ route('home') }}" >
                         <x-application-logo class="h-11 w-auto" />
                     </a>
                 </div>
             </div>
-            <div class="w-auto">
+            <div class="z-10 w-auto">
                 <div class="flex flex-wrap items-center space-x-10">
                     @if (isset($showLinks) && $showLinks)
                         <div class="w-auto">
                             <ul class="flex items-center space-x-6">
                                 @foreach(config('laravel-navigation.header.' . \Illuminate\Support\Facades\Request::path()) as $link)
-                                    <li data-header-link-id="{{ str_replace('#', '', $link['href']) }}" class="font-medium link-underline link-underline-black hidden lg:block">
+                                    <li
+                                        data-header-link-id="{{ str_replace('#', '', $link['href']) }}"
+                                        class="font-medium link-underline link-underline-black hidden lg:block"
+                                    >
                                         <a href="{{ $link['href'] }}">
                                             {{ __('laravel-navigation::navigation.' . $link['title']) }}
                                         </a>
@@ -28,7 +37,7 @@
                     @endif
 
                     <div class="w-auto">
-                        @if (Auth::check())
+                        @if(auth()->check())
                             <div class="inline-block">
                                 <a
                                     class="flex items-center space-x-2 py-3 px-5 w-full text-white font-semibold rounded-xl focus:ring focus:outline-none focus:ring-gray-500 bg-black hover:bg-gray-900 transition ease-in-out duration-200 select-none"
