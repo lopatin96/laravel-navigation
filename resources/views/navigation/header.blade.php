@@ -5,7 +5,7 @@
         </svg>
     @endif
 
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-5xl mx-auto">
         <div class="flex items-center justify-between px-4 py-10">
             <div class="z-10 flex flex-wrap items-center">
                 <div class="w-auto mr-6 ml-5">
