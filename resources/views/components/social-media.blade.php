@@ -1,6 +1,6 @@
 <div class="flex flex-col sm:flex-row items-center sm:space-x-5 space-y-3 sm:space-y-0">
-    @foreach (config('laravel-navigation.social-media') as $key => $url)
-        @if ($url && filter_var($url, FILTER_VALIDATE_URL))
+    @foreach(config('laravel-navigation.social-media') as $key => $url)
+        @if($url && filter_var($url, FILTER_VALIDATE_URL))
             <a
                 target="_blank"
                 href="{{ $url }}"

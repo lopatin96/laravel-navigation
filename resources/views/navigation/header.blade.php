@@ -1,5 +1,5 @@
 <header>
-    @if(\Illuminate\Support\Facades\Request::path() === '/')
+    @if(request()->path() === '/')
         <svg class="absolute hidden lg:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#fff" fill-opacity=".25" d="M0,192L80,170.7C160,149,320,107,480,96C640,85,800,107,960,117.3C1120,128,1280,128,1360,128L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
         </svg>
@@ -16,10 +16,10 @@
             </div>
             <div class="z-10 w-auto">
                 <div class="flex flex-wrap items-center space-x-10">
-                    @if (isset($showLinks) && $showLinks)
+                    @if(isset($showLinks) && $showLinks)
                         <div class="w-auto">
                             <ul class="flex items-center space-x-6">
-                                @foreach(config('laravel-navigation.header.' . \Illuminate\Support\Facades\Request::path()) as $link)
+                                @foreach(config('laravel-navigation.header.' . request()->path()) as $link)
                                     <li
                                         data-header-link-id="{{ str_replace('#', '', $link['href']) }}"
                                         class="font-medium link-underline link-underline-black hidden lg:block"

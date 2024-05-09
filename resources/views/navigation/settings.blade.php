@@ -53,13 +53,13 @@
                     role="tabpanel"
                     aria-labelledby="tabs-account-tab"
                 >
-                    @if (Laravel\Fortify\Features::canUpdateProfileInformation())
+                    @if(Laravel\Fortify\Features::canUpdateProfileInformation())
                         @livewire('profile.update-profile-information-form')
 
                         <x-section-border />
                     @endif
 
-                    @if (! Auth::user()->socialAccount && Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+                    @if(! auth()->user()->socialAccount && Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
                         <div class="mt-10 sm:mt-0">
                             @livewire('profile.update-password-form')
                         </div>
@@ -67,7 +67,7 @@
                         <x-section-border/>
                     @endif
 
-                    @if (! Auth::user()->socialAccount && Laravel\Fortify\Features::canManageTwoFactorAuthentication())
+                    @if(! auth()->user()->socialAccount && Laravel\Fortify\Features::canManageTwoFactorAuthentication())
                         <div class="mt-10 sm:mt-0">
                             @livewire('profile.two-factor-authentication-form')
                         </div>
@@ -79,7 +79,7 @@
                         @livewire('logout-other-browser-sessions-form')
                     </div>
 
-                    @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
+                    @if(Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
                         <x-section-border/>
 
                         <div class="mt-10 sm:mt-0">

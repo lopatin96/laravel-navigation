@@ -31,13 +31,13 @@
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
-                @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                @if(Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
                         <x-dropdown align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
-                                        {{ Auth::user()->currentTeam->name }}
+                                        {{ auth()->user()->currentTeam->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
@@ -54,7 +54,7 @@
                                     </div>
 
                                     <!-- Team Settings -->
-                                    <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                    <x-dropdown-link href="{{ route('teams.show', auth()->user()->currentTeam->id) }}">
                                         {{ __('Team Settings') }}
                                     </x-dropdown-link>
 
@@ -71,7 +71,7 @@
                                         {{ __('Switch Teams') }}
                                     </div>
 
-                                    @foreach (Auth::user()->allTeams() as $team)
+                                    @foreach(auth()->user()->allTeams() as $team)
                                         <x-switchable-team :team="$team" />
                                     @endforeach
                                 </div>
@@ -84,12 +84,12 @@
                 <div class="ml-3 relative">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
-                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                            @if(Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button class="group flex items-center space-x-3 hover:bg-gray-50 p-2 rounded-lg">
-                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ auth()->user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                     <div class="text-right max-w-[150px]">
-                                        <div class="font-semibold text-sm text-gray-700 truncate">{{ Auth::user()->name }}</div>
-                                        <div class="text-xs text-gray-400 truncate">{{ Auth::user()->email }}</div>
+                                        <div class="font-semibold text-sm text-gray-700 truncate">{{ auth()->user()->name }}</div>
+                                        <div class="text-xs text-gray-400 truncate">{{ auth()->user()->email }}</div>
                                     </div>
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-400 group-hover:text-gray-500 w-4 h-4">
@@ -100,7 +100,7 @@
                             @else
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
-                                        {{ Auth::user()->name }}
+                                        {{ auth()->user()->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -127,7 +127,7 @@
                                 @endcan
                             @endforeach
 
-                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                            @if(Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-dropdown-link href="{{ route('api-tokens.index') }}">
                                     {{ __('API Tokens') }}
                                 </x-dropdown-link>
@@ -177,15 +177,15 @@
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="flex items-center px-4">
-                @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                @if(Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <div class="shrink-0 mr-3">
-                        <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                        <img class="h-10 w-10 rounded-full object-cover" src="{{ auth()->user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                     </div>
                 @endif
 
                 <div>
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                    <div class="font-medium text-base text-gray-800">{{ auth()->user()->name }}</div>
+                    <div class="font-medium text-sm text-gray-500">{{ auth()->user()->email }}</div>
                 </div>
             </div>
 
@@ -202,7 +202,7 @@
                     @endcan
                 @endforeach
 
-                @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                @if(Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                         {{ __('API Tokens') }}
                     </x-responsive-nav-link>
@@ -222,7 +222,7 @@
                 </form>
 
                 <!-- Team Management -->
-                @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                @if(Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="border-t border-gray-200"></div>
 
                     <div class="block px-4 py-2 text-xs text-gray-400">
@@ -230,7 +230,7 @@
                     </div>
 
                     <!-- Team Settings -->
-                    <x-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
+                    <x-responsive-nav-link href="{{ route('teams.show', auth()->user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
                         {{ __('Team Settings') }}
                     </x-responsive-nav-link>
 
@@ -247,7 +247,7 @@
                         {{ __('Switch Teams') }}
                     </div>
 
-                    @foreach (Auth::user()->allTeams() as $team)
+                    @foreach(auth()->user()->allTeams() as $team)
                         <x-switchable-team :team="$team" component="responsive-nav-link" />
                     @endforeach
                 @endif
