@@ -64,16 +64,18 @@
                                         </x-dropdown-link>
                                     @endcan
 
-                                    <div class="border-t border-gray-200"></div>
+                                    @if(method_exists(auth()->user(), 'canChangeTeam') && auth()->user()->canChangeTeam())
+                                        <div class="border-t border-gray-200"></div>
 
-                                    <!-- Team Switcher -->
-                                    <div class="block px-4 py-2 text-xs text-gray-400">
-                                        {{ __('Switch Teams') }}
-                                    </div>
+                                        <!-- Team Switcher -->
+                                        <div class="block px-4 py-2 text-xs text-gray-400">
+                                            {{ __('Switch Teams') }}
+                                        </div>
 
-                                    @foreach(auth()->user()->allTeams() as $team)
-                                        <x-switchable-team :team="$team" />
-                                    @endforeach
+                                        @foreach(auth()->user()->allTeams() as $team)
+                                            <x-switchable-team :team="$team" />
+                                        @endforeach
+                                    @endif
                                 </div>
                             </x-slot>
                         </x-dropdown>
@@ -240,16 +242,18 @@
                         </x-responsive-nav-link>
                     @endcan
 
-                    <div class="border-t border-gray-200"></div>
+                    @if(method_exists(auth()->user(), 'canChangeTeam') && auth()->user()->canChangeTeam())
+                        <div class="border-t border-gray-200"></div>
 
-                    <!-- Team Switcher -->
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Switch Teams') }}
-                    </div>
+                        <!-- Team Switcher -->
+                        <div class="block px-4 py-2 text-xs text-gray-400">
+                            {{ __('Switch Teams') }}
+                        </div>
 
-                    @foreach(auth()->user()->allTeams() as $team)
-                        <x-switchable-team :team="$team" component="responsive-nav-link" />
-                    @endforeach
+                        @foreach(auth()->user()->allTeams() as $team)
+                            <x-switchable-team :team="$team" component="responsive-nav-link" />
+                        @endforeach
+                    @endif
                 @endif
             </div>
         </div>
