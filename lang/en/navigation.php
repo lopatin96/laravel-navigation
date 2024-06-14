@@ -25,7 +25,7 @@ return [
 
     'Platform' => 'Platform',
     'Log in' => 'Log in',
-    'Start a free trial' => 'Start a free trial',
+    'Register for free' => 'Register for free',
     'My account' => 'My account',
 
     'Social' => 'Social',

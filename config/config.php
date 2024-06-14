@@ -75,7 +75,7 @@ return [
                     'gate' => 'logged_out',
                 ],
                 [
-                    'title' => 'Start a free trial',
+                    'title' => 'Register for free',
                     'href' => '/register',
                     'gate' => 'logged_out',
                 ],

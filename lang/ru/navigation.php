@@ -25,7 +25,7 @@ return [
 
     'Platform' => 'Платформа',
     'Log in' => 'Войти',
-    'Start a free trial' => 'Начать бесплатную пробную версию',
+    'Register for free' => 'Бесплатная регистрация',
     'My account' => 'Мой аккаунт',
 
     'Social' => 'Соцсети',
