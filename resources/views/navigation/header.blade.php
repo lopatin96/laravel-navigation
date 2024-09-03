@@ -19,16 +19,19 @@
                     @if(isset($showLinks) && $showLinks)
                         <div class="w-auto">
                             <ul class="flex items-center space-x-6">
-                                @foreach(config('laravel-navigation.header.' . request()->path()) as $link)
-                                    <li
-                                        data-header-link-id="{{ str_replace('#', '', $link['href']) }}"
-                                        class="font-medium link-underline link-underline-black hidden lg:block"
-                                    >
-                                        <a href="{{ $link['href'] }}">
-                                            {{ __('laravel-navigation::navigation.' . $link['title']) }}
-                                        </a>
-                                    </li>
-                                @endforeach
+                                @if(array_key_exists(request()->path(), config('laravel-navigation.header')))
+                                    @foreach(config('laravel-navigation.header.' . request()->path()) as $link)
+                                        <li
+                                                data-header-link-id="{{ str_replace('#', '', $link['href']) }}"
+                                                class="font-medium link-underline link-underline-black hidden lg:block"
+                                        >
+                                            <a href="{{ $link['href'] }}">
+                                                {{ __('laravel-navigation::navigation.' . $link['title']) }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                @endif
+
                                 <li class="hidden sm:block">
                                     <x-laravel-lang-switcher::lang-switcher align="top" class="font-medium link-underline link-underline-black cursor-pointer pb-0.5" />
                                 </li>
@@ -40,8 +43,8 @@
                         @if(auth()->check())
                             <div class="inline-block">
                                 <a
-                                    class="flex items-center space-x-2 py-3 px-5 w-full text-white font-semibold rounded-xl focus:ring focus:outline-none focus:ring-gray-500 bg-black hover:bg-gray-900 transition ease-in-out duration-200 select-none"
-                                    href="{{ route('dashboard') }}"
+                                        class="flex items-center space-x-2 py-3 px-5 w-full text-white font-semibold rounded-xl focus:ring focus:outline-none focus:ring-gray-500 bg-black hover:bg-gray-900 transition ease-in-out duration-200 select-none"
+                                        href="{{ route('dashboard') }}"
                                 >
                                     <span>{{ __('laravel-navigation::navigation.Go dashboard') }}</span>
 
@@ -53,16 +56,16 @@
                         @else
                             <div class="inline-block">
                                 <a
-                                    class="py-3 px-5 w-full text-white font-semibold rounded-xl focus:ring focus:outline-none focus:ring-gray-500 bg-black hover:bg-gray-900 transition ease-in-out duration-200 select-none"
-                                    href="{{ route('login') }}"
+                                        class="py-3 px-5 w-full text-white font-semibold rounded-xl focus:ring focus:outline-none focus:ring-gray-500 bg-black hover:bg-gray-900 transition ease-in-out duration-200 select-none"
+                                        href="{{ route('login') }}"
                                 >
                                     {{ __('laravel-navigation::navigation.Sign in') }}
                                 </a>
                             </div>
                             <div class="inline-block">
                                 <a
-                                    class="py-3 px-1 sm:px-5 w-full font-semibold transition ease-in-out select-none hover:underline"
-                                    href="{{ route('register') }}"
+                                        class="py-3 px-1 sm:px-5 w-full font-semibold transition ease-in-out select-none hover:underline"
+                                        href="{{ route('register') }}"
                                 >
                                     {{ __('laravel-navigation::navigation.Sign up') }}
                                 </a>
