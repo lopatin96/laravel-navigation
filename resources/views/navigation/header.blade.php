@@ -1,5 +1,5 @@
 <header>
-    @if(request()->path() === '/')
+    @if(array_key_exists(request()->path(), config('laravel-lang-switcher.languages')))
         <svg class="absolute hidden lg:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#fff" fill-opacity=".25" d="M0,192L80,170.7C160,149,320,107,480,96C640,85,800,107,960,117.3C1120,128,1280,128,1360,128L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
         </svg>
