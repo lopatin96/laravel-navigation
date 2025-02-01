@@ -33,9 +33,9 @@
                             )
                                 <li class="leading-3">
                                     <a
-                                            class="text-gray-500 hover:text-gray-700 text-sm @if($link['target'] ?? '_self' === '_blank') after:content-['_↗'] @endif"
-                                            href="{{ $link['href'] }}"
-                                            target="{{ $link['target'] ?? '_self' }}"
+                                        class="text-gray-500 hover:text-gray-700 text-sm @if($link['target'] ?? '_self' === '_blank') after:content-['_↗'] @endif"
+                                        href="{{ $link['href'] }}"
+                                        target="{{ $link['target'] ?? '_self' }}"
                                     >
                                         {{ __('laravel-navigation::navigation.' . $link['title']) }}
                                     </a>
