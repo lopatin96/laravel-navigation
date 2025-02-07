@@ -2,7 +2,7 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex flex-1">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}" class="hover:opacity-50 transition">
@@ -11,21 +11,74 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    @foreach(config('laravel-navigation.navigation-menu.navigation-links') as $link)
-                        <x-nav-link
-                            href="{{ route($link['route']) }}"
-                            :active="request()->routeIs($link['route'])"
-                            target="{{ $link['target'] ?? '_self' }}"
-                        >
-                            <div class="flex items-center space-x-2">
-                                {!! $link['icon'] !!}
-                                <span>
-                                    {{ __('laravel-navigation::navigation.' . $link['title']) }}
-                                </span>
-                            </div>
-                        </x-nav-link>
-                    @endforeach
+                <div class="hidden sm:flex flex-1 justify-between">
+                    <div class="flex space-x-8 sm:-my-px sm:ml-10">
+                        @foreach(array_filter(config('laravel-navigation.navigation-menu.navigation-links'), fn($link) => !isset($link['alignment']) || $link['alignment'] === 'left') as $link)
+                            <x-nav-link
+                                href="{{ route($link['route']) }}"
+                                :active="request()->routeIs($link['route'])"
+                                target="{{ $link['target'] ?? '_self' }}"
+                            >
+                                <div class="flex items-center space-x-2">
+                                    @if(isset($link['icon']))
+                                        <span class="relative shrink-0">
+                                            {!! $link['icon'] !!}
+
+                                            @if(isset($link['ping']) ?auth()->user()->{$link['ping']}() : false)
+                                                <span class="flex absolute top-0 end-0 size-3 -mt-1.5 -me-1.5">
+                                                    <span class="animate-ping absolute inline-flex size-full rounded-full bg-red-400 opacity-75 dark:bg-red-600"></span>
+                                                    <span class="relative inline-flex rounded-full size-3 bg-red-500"></span>
+                                                </span>
+                                            @elseif(isset($link['total']) ? $total = auth()->user()->{$link['total']}() : false)
+                                                <span class="absolute top-0 end-0 inline-flex items-center py-0.5 px-1.5 rounded-full text-xs font-medium transform -translate-y-1/2 translate-x-1/2 bg-red-500 text-white">
+                                                    {{ $total }}
+                                                </span>
+                                            @endif
+                                        </span>
+                                    @endif
+                                    @if(! isset($link['hidden-title']) || ! $link['hidden-title'])
+                                        <span>
+                                            {{ __('laravel-navigation::navigation.' . $link['title']) }}
+                                        </span>
+                                    @endif
+                                </div>
+                            </x-nav-link>
+                        @endforeach
+                    </div>
+
+                    <div class="flex space-x-8 sm:-my-px sm:ml-10">
+                        @foreach(array_filter(config('laravel-navigation.navigation-menu.navigation-links'), fn($link) => ($link['alignment'] ?? null) === 'right') as $link)
+                            <x-nav-link
+                                href="{{ route($link['route']) }}"
+                                :active="request()->routeIs($link['route'])"
+                                target="{{ $link['target'] ?? '_self' }}"
+                            >
+                                <div class="flex items-center space-x-2">
+                                    @if(isset($link['icon']))
+                                        <span class="relative shrink-0">
+                                            {!! $link['icon'] !!}
+
+                                            @if(isset($link['ping']) ?auth()->user()->{$link['ping']}() : false)
+                                                <span class="flex absolute top-0 end-0 size-3 -mt-1.5 -me-1.5">
+                                                    <span class="animate-ping absolute inline-flex size-full rounded-full bg-red-400 opacity-75 dark:bg-red-600"></span>
+                                                    <span class="relative inline-flex rounded-full size-3 bg-red-500"></span>
+                                                </span>
+                                            @elseif(isset($link['total']) ? $total = auth()->user()->{$link['total']}() : false)
+                                                <span class="absolute top-0 end-0 inline-flex items-center py-0.5 px-1.5 rounded-full text-xs font-medium transform -translate-y-1/2 translate-x-1/2 bg-red-500 text-white">
+                                                    {{ $total }}
+                                                </span>
+                                            @endif
+                                        </span>
+                                    @endif
+                                    @if(! isset($link['hidden-title']) || ! $link['hidden-title'])
+                                        <span>
+                                            {{ __('laravel-navigation::navigation.' . $link['title']) }}
+                                        </span>
+                                    @endif
+                                </div>
+                            </x-nav-link>
+                        @endforeach
+                    </div>
                 </div>
             </div>
 
