@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'home_route' => 'dashboard',
+
     'header' => [
         '/' => [
             [
@@ -24,6 +26,7 @@ return [
 //            …
 //        ]
     ],
+
     'footer' => [
         [
             'title' => 'Product',
@@ -114,6 +117,7 @@ return [
             ],
         ],
     ],
+
     'navigation-menu' => [
         'navigation-links' => [
             [
